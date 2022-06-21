@@ -10,7 +10,7 @@
     "analyze": "ANALYZE=true yarn build",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/react": "11.9.0",
