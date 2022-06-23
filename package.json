@@ -3,12 +3,6 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write src",
-    "lint": "eslint --ext .ts,.tsx src",
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "analyze": "ANALYZE=true yarn build",
-    "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
