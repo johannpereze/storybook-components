@@ -1,8 +1,25 @@
 {
-  "name": "vite-ts-material-ui",
+  "name": "jpe-ui-components",
   "version": "0.0.1",
   "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/johannpereze/storybook-components",
+  "repository": {
+    "url": "https://github.com/johannpereze/storybook-components",
+    "type": "git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
+    "build:": "TODO",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
