@@ -11,7 +11,7 @@ export interface SelectProps {
   /**
    * This is the complete form from useFormik
    */
-  form: FormikProps<any>
+  formik: FormikProps<any>
   /**
    * Must be an array of objects with value and label
    */
@@ -21,12 +21,12 @@ export interface SelectProps {
   variant?: 'outlined' | 'filled' | 'standard'
 }
 
-export default function Select({ label, options, form: propsForm, name, size, variant }: SelectProps) {
+export default function Select({ label, options, formik, name, size, variant }: SelectProps) {
   const form =
-    propsForm ||
+    formik ||
     useFormik({
       initialValues: {
-        componetName: ''
+        componentName: ''
       },
       onSubmit: () => {}
     })
@@ -64,6 +64,6 @@ Select.defaultProps = {
     { value: 'Option B', label: 'Option B' },
     { value: 'Option C', label: 'Option C' }
   ],
-  name: 'componetName',
+  name: 'componentName',
   variant: 'outlined'
 }

@@ -1,6 +1,6 @@
 import { TextField as MuiTexField } from '@mui/material'
 import { pick } from 'dot-object'
-import { FormikProps } from 'formik'
+import { FormikProps, useFormik } from 'formik'
 
 interface TextFieldProps {
   formik: FormikProps<any>
@@ -12,19 +12,25 @@ interface TextFieldProps {
 }
 
 export default function TextField({ formik, name, fullWidth, label, value, type }: TextFieldProps) {
-  if (value === null) {
-    value = pick(name, formik.values)
-  }
+  const form =
+    formik ||
+    useFormik({
+      initialValues: {
+        componentName: ''
+      },
+      onSubmit: () => {}
+    })
+
   return (
     <MuiTexField
       fullWidth={fullWidth}
       name={name}
       label={label}
-      value={value}
-      onChange={formik.handleChange}
-      error={pick(name, formik.touched) && Boolean(pick(name, formik.errors))}
-      helperText={pick(name, formik.touched) && pick(name, formik.errors)}
-      onBlur={() => formik.setFieldTouched(name, true)}
+      value={value || pick(name, form.values)}
+      onChange={form.handleChange}
+      error={pick(name, form.touched) && Boolean(pick(name, form.errors))}
+      helperText={pick(name, form.touched) && pick(name, form.errors)}
+      onBlur={() => form.setFieldTouched(name, true)}
       type={type}
     />
   )
@@ -34,5 +40,6 @@ TextField.defaultProps = {
   fullWidth: false,
   label: null,
   type: 'text',
-  value: null
+  value: null,
+  name: 'componentName'
 }

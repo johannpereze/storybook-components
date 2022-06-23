@@ -8,6 +8,7 @@ export default {
 
 const Template: ComponentStory<typeof Select> = args => <Select {...args} />
 export const Outlined = Template.bind({})
+
 export const Filled = Template.bind({})
 Filled.args = {
   variant: 'filled'
