@@ -1,6 +1,5 @@
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-import { visualizer } from 'rollup-plugin-visualizer'
 import { UserConfig } from 'vite'
 import Checker from 'vite-plugin-checker'
 
@@ -18,12 +17,6 @@ const config: UserConfig = {
         replacement: `${pathResolve('src')}/`
       }
     ]
-  },
-  build: {
-    rollupOptions: {
-      plugins: shouldAnalyze ? [visualizer({ open: true, filename: './bundle-size/bundle.html' })] : []
-    },
-    sourcemap: !!shouldAnalyze
   },
   plugins: [
     react(),
