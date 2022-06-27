@@ -4,8 +4,17 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'plugin:import/errors', 'plugin:import/warnings', 'plugin:import/typescript', 'eslint:recommended', 'plugin:storybook/recommended'],
-  parser: '@typescript-eslint/parser',
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'eslint:recommended',
+    'plugin:storybook/recommended'
+  ],
+  // parser: '@typescript-eslint/parser', TODO: Check if this is needed
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -15,16 +24,22 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    'prettier/prettier': ['error', {
-      endOfLine: 'auto'
-    }],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto'
+      }
+    ],
     '@typescript-eslint/camelcase': 'off',
     camelcase: 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [1, {
-      extensions: ['.ts', '.tsx']
-    }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.ts', '.tsx']
+      }
+    ],
     'no-use-before-define': 'off',
     'no-param-reassign': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -33,14 +48,18 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     'no-unused-vars': 'off',
     'no-plusplus': 'off',
-    'import/extensions': ['error', 'ignorePackages', {
-      js: 'never',
-      jsx: 'never',
-      ts: 'never',
-      tsx: 'never'
-    }]
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never'
+      }
+    ]
   },
   globals: {
     JSX: true
   }
-};
+}

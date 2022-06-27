@@ -2,8 +2,15 @@
   "name": "jpe-mui-components",
   "version": "0.0.1",
   "license": "MIT",
-  "typings": "dist/index.d.ts",
-  "main": "dist/index.js",
+  "main": "dist/jpe-mui-components.umd.js",
+  "module": "./dist/my-lib.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
   "homepage": "https://github.com/johannpereze/storybook-components",
   "repository": {
     "url": "https://github.com/johannpereze/storybook-components",
@@ -19,7 +26,7 @@
     "src"
   ],
   "scripts": {
-    "build:": "TODO",
+    "build": "tsc && vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -66,7 +73,12 @@
     "eslint-plugin-storybook": "^0.5.12",
     "prettier": "^2.6.2",
     "rc": "^1.2.8",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "vite-plugin-dts": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || 17.x || 18.x",
+    "react-dom": "^16.8.0 || 17.x || 18.x"
   },
   "eslintConfig": {
     "extends": [
